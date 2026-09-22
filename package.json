@@ -1,0 +1,23 @@
+{
+  "name": "kodinasi",
+  "version": "1.0.0",
+  "main": "node_modules/expo/AppEntry.js",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "web": "expo start --web"
+  },
+  "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
+    "@react-navigation/native": "^7.4.1",
+    "@react-navigation/native-stack": "^7.19.2",
+    "expo": "57",
+    "expo-status-bar": "~1.12.1",
+    "react": "18.2.0",
+    "react-native": "^0.87.1",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0"
+  }
+}

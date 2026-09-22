@@ -1,0 +1,13 @@
+{
+  "expo": {
+    "name": "KodiNasi",
+    "slug": "kodinasi",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": { "backgroundColor": "#0B6E4F" },
+    "assetBundlePatterns": ["**/*"],
+    "ios": { "supportsTablet": true },
+    "android": { "adaptiveIcon": { "backgroundColor": "#0B6E4F" } }
+  }
+}
