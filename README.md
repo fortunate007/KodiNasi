@@ -15,9 +15,3 @@ npm start
 ```
 Scan the QR code with Expo Go on your phone, or press `a` / `i` for an emulator.
 
-## Next steps
-- Replace mock data in `src/data/mockListings.js` with real API calls
-- Build the Express + Prisma backend (`/api/auth`, `/api/listings`)
-- Add Cloudinary image upload in AddListingScreen
-- Add M-Pesa integration for listing fees / deposits
-- Add a real logged-in state (context or Redux) instead of navigation-only roles
