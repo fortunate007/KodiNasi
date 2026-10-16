@@ -1,0 +1,66 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+enum Role {
+  LANDLORD
+  TENANT
+enum Role {
+  LANDLORD
+  TENANT
+}
+
+enum OtpPurpose {
+  VERIFY_PHONE
+  RESET_PASSWORD
+}
+
+model User {
+  id            Int       @id @default(autoincrement())
+  name          String
+  phone         String    @unique
+  phoneVerified Boolean   @default(false)
+  email         String?   @unique
+  emailVerified Boolean   @default(false)
+  password      String
+  role          Role
+  listings      Listing[]
+  otpCodes      OtpCode[]
+  createdAt     DateTime  @default(now())
+}
+
+model OtpCode {
+  id        Int        @id @default(autoincrement())
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  userId    Int
+  codeHash  String
+  purpose   OtpPurpose
+  expiresAt DateTime
+  attempts  Int        @default(0)
+  usedAt    DateTime?
+  createdAt DateTime   @default(now())
+
+  @@index([userId, purpose])
+}
+
+model Listing {
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String
+  price       Int
+  area        String
+  bedrooms    Int
+  images      String[]
+  landlord    User     @relation(fields: [landlordId], references: [id])
+  landlordId  Int
+  createdAt   DateTime @default(now())
+}
